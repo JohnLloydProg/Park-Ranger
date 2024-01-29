@@ -9,8 +9,32 @@ section {
 }
 
 .side-bar {
-    min-width: 20%;
+    width: 20%;
     margin-top: 2.5em;
+}
+
+.side-bar .search-bar {
+    width: 100%;
+    display: flex;
+    background-color: white;
+    border: 2px solid #9B4722;
+    border-radius: 1em;
+    margin-bottom: 1.5em;
+}
+
+.search-bar img {
+    width: 30px;
+    height: 30px;
+}
+
+.search-bar input[type="text"], .search-bar input[type="text"]:focus {
+    width: 100%;
+    padding: 3px;
+    background-color: white;
+    color: #9B4722;
+    border: none;
+    outline: none;
+    border-radius: 1em;
 }
 
 .side-bar h5 {
@@ -21,7 +45,7 @@ section {
     color: #26282a;
 }
 
-.side-bar #drinks {
+.side-bar #drinks, .side-bar #desserts {
     color: #9B4722;
 }
 
@@ -31,16 +55,16 @@ section {
     padding-left: 0.5em;
 }
 
-.drinks {
+.drinks, .desserts {
     border-left: 2px solid #9B4722;
     padding-left: 0.5em;
 }
 
-.drinks input[type="radio"] {
+.drinks input[type="radio"], .desserts input[type="radio"] {
     appearance: none;
 }
 
-.drinks input[type="radio"]+label {
+.drinks input[type="radio"]+label, .desserts input[type="radio"]+label {
     text-decoration: none;
     color: #b9a37a;
     transition: color 0.3s ease, margin 0.3s ease;
@@ -48,7 +72,10 @@ section {
     cursor: pointer;
 }
 
-.drinks input[type="radio"]:hover+label,  .drinks input[type="radio"]:checked+label{
+.drinks input[type="radio"]:hover+label,  
+.drinks input[type="radio"]:checked+label, 
+.desserts input[type="radio"]:hover+label,
+.desserts input[type="radio"]:checked+label {
     color: #9B4722;
     text-decoration: none;
     font-weight: bold;
@@ -60,30 +87,80 @@ section {
     margin-bottom: 1em;
 }
 
-.view table{
-    margin-left: 1em;
+.view {
+    width: 80%;
+    margin-top: 2em;
 }
 
-.view table td{
-    padding: 3em;
-}
-
-.view table .card {
+.view .card {
     cursor: pointer;
     border: none;
+    width: 15em;
+    height: 15em;
+    margin: 15px;
 }
 
-.view table img {
+.view .card img {
     width: 10em;
     border-radius: 100%;
     background-color: #5C5545;
     padding: 10px;
     margin: auto;
+    margin-top: 0em;
+    margin-bottom: 5px;
     box-shadow: 2px 2px 5px gray;
 }
 
-.view table h4 {
-    margin-top: 0.5em;
+.view .card h4 {
+    margin: auto;
+    margin-top: 10px;
     text-align: center;
     color: #26282a;
+}
+
+@media (max-width: 425px) {
+    .side-bar {
+        width: 0px;
+    }
+
+    .side-bar .drinks,
+    .side-bar #drinks,
+    .side-bar .desserts,
+    .side-bar #desserts {
+        display: none;
+    }
+
+    .side-bar .search-bar {
+        width: 90%;
+        position: fixed;
+        top: 80px;
+        left: 5%;
+        z-index: 1;
+    }
+    .side-bar .details-container {
+        background-color: #b9a37a;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .details-container h5 {
+        text-align: center;
+    }
+    .details-container #details {
+        border: none;
+        padding: 0;
+        display: flex;
+    }
+
+    .details-container p {
+        width: 150px;
+        margin: auto;
+    }
+    .view {
+        width: 100%;
+    }
 }

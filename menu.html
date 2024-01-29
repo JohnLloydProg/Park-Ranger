@@ -62,12 +62,20 @@
         <div class="container">
             <div class="menu" style="display: flex;">
                 <nav class="side-bar">
+                  <div class="search-bar">
+                    <img src="./images/menu/search.png" alt="">
+                    <input type="text" id="search-bar" name="search-bar" onchange="search(this.value)">
+                  </div>
                   <h5 id="drinks">Drinks</h5>
                   <ul class="drinks">
-                    <li><input type="radio" name="drinks" id="cold-brews" onclick="fil('cb')"><label for="cold-brews">Cold Brews</label></li>
-                    <li><input type="radio" name="drinks" id="fruity" onclick="fil('f')"><label for="fruity">Fruity</label></li>
-                    <li><input type="radio" name="drinks" id="hot-shots" onclick="fil('hs')"><label for="hot-shots">Hot Shots</label></li>
-                    <li><input type="radio" name="drinks" id="specials" onclick="fil('s')"><label for="specials">Specials</label></li>
+                    <li><input type="radio" name="products" id="cold-brews" onclick="fil('cb')"><label for="cold-brews">Cold Brews</label></li>
+                    <li><input type="radio" name="products" id="fruity" onclick="fil('f')"><label for="fruity">Fruity</label></li>
+                    <li><input type="radio" name="products" id="hot-shots" onclick="fil('hs')"><label for="hot-shots">Hot Shots</label></li>
+                    <li><input type="radio" name="products" id="specials" onclick="fil('s')"><label for="specials">Specials</label></li>
+                  </ul>
+                  <h5 id="desserts">Desserts</h5>
+                  <ul class="desserts">
+                    <li><input type="radio" name="products" id="cookies" onclick="fil('ck')"><label for="cookies">Cookies</label></li>
                   </ul>
                   <div class="details-container">
                     <h5 id="product-details">Product Details</h5>
@@ -78,8 +86,9 @@
                   </div>
                 </nav>
                 <div class="view">
-                    <table id="card-container">
-                    </table>
+                    <div class="row"  id="card-container" style="align-items: center; justify-content: center;">
+
+                    </div>
                 </div>
             </div>
         </div>
